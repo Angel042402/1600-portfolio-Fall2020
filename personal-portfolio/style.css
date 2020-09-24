@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+body  {
+  background-color: #63465a;
+  margin: 20px; 
+  font-family: "Raleway", sans-serif;
+}
+main {
+  width: 960px;
+  margin: 0 auto;
+} 
+header {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px; 
+}
+.header-pic {
+  border-radius: 50%;
+  height: 90px;
+}
+.profile-pic {
+  height: 195px;
+}
+#info {
+  display: flex;
+  margin-bottom: 20px;
+}
+.bio {
+  width: 100%;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#choose-list {
+  background-color: #c0aD7D;
+  padding: 8px;
+}
+#name-date {
+  display: flex;
+  justify-content: space-between;
+}
+#name-date {
+  color: #fff;
+  margin: 0;
+  font-size: 1em;
+}
+#tech {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+h2 {
+  color: #fff;
+  margin: 0;
+}
+h4 {
+  color: #000;
+  margin: 5px 0 12px 5px;
+}
+.excited {
+  background-color: #c0aD7D;
+  margin-top: 20px;
+  padding: 12px;
+}
+.excited p{
+  background-color: #c0aD7D;
+}
+time {
+  color: #fff;
+  font: 1.5em "Raleway", sans-serif;
+}
+ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #444;
+}
+figure {
+  margin: 5px 0;
+  text-align: center;
+}
+figure > img {
+  max-height: 150px;
+  max-width: 180px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+#choose-list, .excited {
+  margin: 10px 0 0 0;
+  }
+figcaption {
+  justify-content: center;
+  background-color: rgba(10, 10, 10, 0.5);
+  color: #fff;
+  max-width: 180px;
+  text-align: center;
+  position: relative;
+  top: -20px;  
+}
+footer {
+  text-align: center;
+  color: #fff;
+}
