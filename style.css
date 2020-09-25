@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+}
+nav {
+    background-color: red;
+}
+#welcome-section {
+    background-color: antiquewhite;
+}
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+}
