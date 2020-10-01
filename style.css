@@ -1,14 +1,31 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
 }
 nav {
+    display: flex;
+    justify-content: flex-end;
     background-color: red;
 }
 #welcome-section {
-    background-color: antiquewhite;
+    background-color: rgb(216, 172, 236);
+}
+#projects {
+    background-color: mediumspringgreen;
+}
+#contact {
+    background-color: paleturquoise;
 }
 ul {
     display: flex;
-    list-style: none;
-    justify-content: flex-end;
+    list-style-type: none;
+}
+li {
+    padding: 0 5px 0 5px;
+}
+a {
+    text-decoration: none;
+    color: white;
 }
