@@ -1,19 +1,45 @@
+* {                       /*base reset*/
+  margin: 0;              /*resets margin, padding presets*/
+  padding: 0;             /*for entire document*/
+}
 html {
-    scroll-behavior: smooth;
-    box-sizing: border-box;
+   /* Set font size for easy rem calculations
+   * default document font size = 16px, 1rem = 16px, 100% = 16px
+   * (100% / 16px) * 10 = 62.5%, 1rem = 10px, 62.5% = 10px
+  */
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
 }
 body {
     margin: 0;
 }
+ul {
+  display: flex;
+  list-style-type: none;
+}
+h1 {
+  font-family: Raleway, sans-serif;
+  font-size: 5.5rem;
+  font-weight: 800;
+}
+ h3 {
+  font-family: Raleway, sans-serif;
+  font-size: 4rem;
+}
+h4 {
+  font-size: 3.5rem;
+}
 #navbar {
     display: flex;
     justify-content: flex-end;
+    position: fixed;      /*keeps navbar at top of page*/
     background-color:#59A7D4;
-    top: 0;
-    left: 0;
-    width: 100%;
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4);
-    z-index: 10;
+    top: 0;               /* allows navbar to */
+    left: 0;              /* span the */
+    width: 100%;          /* width of the page*/
+    z-index: 10;          /* allows other items (projects) to scroll under navbar */
 }
 .nav-list a {
   display: block;
@@ -22,7 +48,6 @@ body {
 }
 .nav-list {
     display: flex;
-   /* margin-right: 2rem;*/
   }
   .nav-list a:hover {
     background:  #dddfd4;
@@ -35,15 +60,22 @@ body {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: rgb(177, 176, 177);
     color: #fff;
-    background-image: linear-gradient(45deg,#1d1d1f 0%, #1d2020,  #4F5749 100%);
+    background-image: linear-gradient(45deg,#1d1d1f 5%, #1d2020,  #4F5749 100%);
   }
+.projects-header {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    
+    padding-bottom: 4rem;
+}
 .projects-section{
-    text-align: center;
+  text-align: center;
   padding: 10rem 2rem;
   background-color: rgb(177, 176, 177);
   color: #fff;
+  font-size: 2rem;
   background-image: linear-gradient(135deg,#4A2C40 20%, #B02F21 80%);
 }
 .projects-grid {
@@ -55,19 +87,11 @@ body {
     margin: 0 auto;
     margin-bottom: 6rem;
   }
-  .projects-header {
-    display: flex;
-    justify-content: center;
-    text-decoration: underline;
-}
+  
   a {
     text-decoration: none;
     color: #fffefe;
   }
-  /*img {
-    display: block;
-    width: 100%;
-  }*/
   .contact-section {
     display: flex;
     flex-direction: column;
@@ -79,16 +103,6 @@ body {
     padding: 0 2rem;
     background:#59A7D4;
   }
-  /*.project {
-    background: #ccc;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    border-radius: 2px;
-  } 
-  .project-image {
-   /* height: calc(100% - 6.8rem);
-    width: 100%;
-    object-fit: cover;
-  }*/
   .contact-links {
     display: flex;
     justify-content: center;
@@ -105,13 +119,28 @@ body {
   .contact-details:hover {
     transform: translateY(8px);
   }
+  .contact-header, h4 {
+    font-style: italic;
+  }
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
     border-radius: 2px;
   }
-ul {
-    display: flex;
-    list-style-type: none;
+                              /* "@media" is a keyword for a media query */
+@media (max-width: 28.75em) {
+  .contact-links {
+    flex-direction: column;
+    text-align: center;
+  }
 }
-
+                              /* media queries can be combined with selectors */
+                              /* below is combining screen with max-width so if 
+                              the screen is less than 30em the background-image
+                               will change the gradient colors*/
+  @media screen and (max-width:30em) { 
+  #welcome-section {
+    background-image: linear-gradient(270deg,#a84f3c 20%, #9df57a 80%);
+    font-size: small;
+  }
+}
