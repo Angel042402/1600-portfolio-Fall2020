@@ -85,10 +85,16 @@ img {
   font-size: 2rem;
   background-image: linear-gradient(135deg,#4A2C40 20%, #a05c54 80%);
 }
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2.5rem;
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
@@ -97,6 +103,10 @@ img {
   a {
     text-decoration: none;
     color: #fffefe;
+  }
+  a img {
+    max-width: 300px;
+    max-height: 300px;
   }
   .contact-section {
     display: flex;
