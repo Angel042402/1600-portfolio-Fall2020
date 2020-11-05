@@ -26,14 +26,16 @@ maleButton.addEventListener('click', () => populateDOM(maleCharaters))
 
 femaleButton.addEventListener('click', () => populateDOM(femaleCharaters))
 
-/*const otherCharacters = people.filter((thing) => {
-    if (thing.gender === 'n/a'||
-        thing.gender === 'none'||
+otherButton.addEventListener('click', () => populateDOM(otherCharacters))
+
+const otherCharacters = people.filter((thing) => {
+    if (thing.gender === 'n/a' ||
+        thing.gender === 'none' ||
         thing.gender === 'hermaphrodite') 
         {
         return thing
     }
-})*/
+})
 
 /*speciesButton.addEventListener('click', () => populateDOM(speciesClassification))*/
 

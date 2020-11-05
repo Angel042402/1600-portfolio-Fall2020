@@ -1,20 +1,20 @@
 @font-face{
     font-family: "sf_distant_galaxy";
-    src:url("../fonts/sf_distant_galaxy/SF\ Distant\ Galaxy\ Alternate.ttf")
+    src:url("../fonts/sf_distant_galaxy/SF\ Distant\ Galaxy.ttf")
 }
+
 *{
     margin: 0px;
     box-sizing: border-box;
 }
 html{
-    background-image: url('https://papers.co/wallpaper/papers.co-ao69-starwars-darth-vader-art-film-blue-23-wallpaper.jpg');
+    background-image: url('https://wallpapercave.com/wp/fN6yg6C.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 .mainHeader {
     display: flex;
     justify-content: space-around;
-    background-color: beige;
     margin: 1rem;
 }
 #main {
@@ -28,18 +28,22 @@ figure {
 }
 figure img {
     max-height: 12rem;
+    border-radius: 10px;
 }
 figcaption{
-    color: yellow;
+    color: #fbed66;
     font-family: sf_distant_galaxy, sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    text-shadow: 5px 5px 5px black;
 }
 button {
-    background-color: #3b6ab8;
+    background-color: #fbed66;
     color: #90c3f8;
     text-shadow: 5px 5px 5px black;
-    border: 0;
+    border-style: none;
     border-radius: 10px;
-    box-shadow: none;
+    box-shadow: 8px 8px 2px 1px rgba(61, 61, 73, 0.2);
     font-size: 2rem;
     font-family: sf_distant_galaxy, sans-serif;
 }

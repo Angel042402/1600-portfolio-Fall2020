@@ -1,3 +1,7 @@
+@font-face{
+    font-family: "sf_distant_galaxy";
+    src:url("../fonts/sf_distant_galaxy/SF\ Distant\ Galaxy\ AltOutline.ttf")
+}
 *{
     margin: 0px;
     box-sizing: border-box;
@@ -23,8 +27,24 @@ figure {
 }
 figure img {
     max-height: 12rem;
+    border-radius: 10px;
+
 }
- 
-/*.container {
-    background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.mczHgiD8nbA-XBAZNEWbagHaE8%26pid%3DApi&f=1');
-}*/
+figcaption{
+    color: #fbed66;
+    font-family: sf_distant_galaxy, sans-serif;
+    text-align: center;
+    font-size: 1rem;
+    text-shadow: 5px 5px 5px black;
+}
+button {
+    background-color: #3b6ab8;
+    color: #fbed66;
+    text-shadow: 5px 5px 5px black;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: none;
+    font-size: 2rem;
+    font-family: sf_distant_galaxy, sans-serif;
+}
+

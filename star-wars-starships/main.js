@@ -14,6 +14,10 @@ const starshipDButton = document.createElement('button')
 starshipDButton.textContent = 'Death Star'
 mainHeader.appendChild(starshipDButton)
 
+const starshipMfalconButton = document.createElement('button')
+starshipMfalconButton.textContent = 'Millennium Falcon'
+mainHeader.appendChild(starshipMfalconButton)
+
 /*const newDiv = document.createElement('div'); //created a new div, I want to use this div to be a container for the images I want to transition from one to another.
 newDiv.className = 'container'
 document.body.insertBefore(newDiv, mainContent)
@@ -26,9 +30,13 @@ const starshipFighter = starships.filter(starships => starships.starship_class =
 
 const starshipDestroyer = starships.filter(starships => starships.starship_class === `Deep Space Mobile Battlestation`)
 
+const starshipMillFalcon = starships.filter(starships => starships.starship_class === `Light freighter`)
+
 starshipButton.addEventListener('click', () => populateDOM(starshipFighter))
 
 starshipDButton.addEventListener('click', () => populateDOM(starshipDestroyer))
+
+starshipMfalconButton.addEventListener('click', () => populateDOM(starshipMillFalcon))
 
 function populateDOM(starships) {
     removeChildren(mainContent)
