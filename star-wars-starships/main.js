@@ -47,8 +47,7 @@ function populateDOM(starships) {
         mainContent.appendChild(shipFigure)
     })
 }
-//let theUrl = "https://swapi.co/api/people/2/"
-//let theUrl2 = "https://swapi.co/api/people/11/"
+
 
 function getLastNumber(url) {
     let end = url.lastIndexOf('/')
