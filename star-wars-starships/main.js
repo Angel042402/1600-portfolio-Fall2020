@@ -1,5 +1,5 @@
 import { starships } from '../data/starships.js'
-
+import { removeChildren, getLastNumber} from '../utils/index.js'
 const mainContent = document.querySelector('#main')
 
 const mainHeader = document.createElement('header')
@@ -53,21 +53,15 @@ function populateDOM(starships) {
         shipFigure.appendChild(shipCaption)
 
         mainContent.appendChild(shipFigure)
-    })
+    })A
+    navList.textContent(anchorWrap)
+    nav.textContent(navList)*/
 }
 
 
-function getLastNumber(url) {
-    let end = url.lastIndexOf('/')
-    let start = end - 2
-    if(url.charAt(start)=='/'){
-        start ++
-    }
-    return(url.slice(start, end))
-}
-function removeChildren(container) { 
-    while (container.firstChild) {
-        container.removeChild(container.firstChild);
-    }
-    
-}
+
+
+
+
+
+
