@@ -1,5 +1,6 @@
 import { starships } from '../data/starships.js'
 import { removeChildren, getLastNumber} from '../utils/index.js'
+
 const mainContent = document.querySelector('#main')
 
 const mainHeader = document.createElement('header')
@@ -53,8 +54,8 @@ function populateDOM(starships) {
         shipFigure.appendChild(shipCaption)
 
         mainContent.appendChild(shipFigure)
-    })A
-    navList.textContent(anchorWrap)
+    })
+    /*navList.textContent(anchorWrap)
     nav.textContent(navList)*/
 }
 
