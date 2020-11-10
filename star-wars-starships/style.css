@@ -12,6 +12,7 @@ html{
     background-repeat: no-repeat;
     background-size: cover;
 }
+
 .mainHeader {
     display: flex;
     justify-content: space-around;
