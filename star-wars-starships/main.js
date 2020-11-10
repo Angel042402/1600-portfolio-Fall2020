@@ -19,14 +19,6 @@ const starshipMfalconButton = document.createElement('button')
 starshipMfalconButton.textContent = 'Millennium Falcon'
 mainHeader.appendChild(starshipMfalconButton)
 
-/*const newDiv = document.createElement('div'); //created a new div, I want to use this div to be a container for the images I want to transition from one to another.
-newDiv.className = 'container'
-document.body.insertBefore(newDiv, mainContent)
-
-const newImg = document.createElement('img')// experimenting with ways to make one background img morph or fade into another
-newImg.className = 'background_img_darth'
-document.body.insertBefore(newImg, mainContent)*/
-
 const starshipFighter = starships.filter(starships => starships.starship_class === `Starfighter`)
 
 const starshipDestroyer = starships.filter(starships => starships.starship_class === `Deep Space Mobile Battlestation`)
@@ -55,8 +47,7 @@ function populateDOM(starships) {
 
         mainContent.appendChild(shipFigure)
     })
-    /*navList.textContent(anchorWrap)
-    nav.textContent(navList)*/
+    
 }
 
 

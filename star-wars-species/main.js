@@ -55,16 +55,4 @@ function populateSpeciesView(speciesData) {
     }
     populateNav(species)
 
-    /*const shipFigure = document.createElement('figure')
-        const shipImg = document.createElement('img')
-        let shipNum = getLastNumber(element.url)
-        shipImg.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
-        shipImg.addEventListener('error', () => shipImg.hidden = true)// genius level
-        const shipCaption = document.createElement('figcaption')
-        shipCaption.textContent = element.name
-
-        shipFigure.appendChild(shipImg)
-        shipFigure.appendChild(shipCaption)
-
-        mainContent.appendChild(shipFigure)
-    })*/
+    

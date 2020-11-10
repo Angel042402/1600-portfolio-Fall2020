@@ -37,9 +37,6 @@ const otherCharacters = people.filter((thing) => {
     }
 })
 
-/*speciesButton.addEventListener('click', () => populateDOM(speciesClassification))*/
-
-//femaleButton.addEventListener('click', () => populateDOM(femaleCharaters))
     
 function populateDOM(characters) {
     removeChildren(mainContent)
