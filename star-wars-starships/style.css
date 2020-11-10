@@ -2,7 +2,6 @@
     font-family: "sf_distant_galaxy";
     src:url("../fonts/sf_distant_galaxy/SF\ Distant\ Galaxy.ttf")
 }
-
 *{
     margin: 0px;
     box-sizing: border-box;
@@ -12,7 +11,6 @@ html{
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 .mainHeader {
     display: flex;
     justify-content: space-around;
@@ -30,19 +28,21 @@ figure {
 figure img {
     max-height: 12rem;
     border-radius: 10px;
+    border: 2px solid silver;
 }
 figcaption{
     color: #fbed66;
     font-family: sf_distant_galaxy, sans-serif;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1rem;
     text-shadow: 5px 5px 5px black;
 }
 button {
     background-color: #fbed66;
     color: #90c3f8;
     text-shadow: 5px 5px 5px black;
-    border-style: none;
+    border: 2px solid #90c3f8;
+    padding: 0 10px 5px 10px;
     border-radius: 10px;
     box-shadow: 8px 8px 2px 1px rgba(61, 61, 73, 0.2);
     font-size: 2rem;

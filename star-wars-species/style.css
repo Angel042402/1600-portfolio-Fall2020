@@ -8,42 +8,11 @@
     src:url("../fonts/sf_distant_galaxy/SF\ Distant\ Galaxy.ttf")
 }
 
-.crossfd img {
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
-}
-.lazyloaded {
-    opacity: 1;
-    transition: opacity .4s;
-    transition-delay: 0ms;
-}
-img {
-    height: auto;
-    max-width: 100%;
-}
 html{
     background-image: url('https://wallpapercave.com/wp/fN6yg6C.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
-/*I found this for css and html code at https://www.gadgetronicx.com/image-hover-effects/*/
-.crossfd{
-        background: url("https://wallpapercave.com/wp/wp3984510.jpg")no-repeat;
-        background-size: cover;
-        display: inline-block;
-        font-size: 0;
-             }
-.crossfd img{
-                 -webkit-transition: opacity 1s ease-in-out;
-                 -moz-transition: opacity 1s ease-in-out;
-                 -o-transition: opacity 1s ease-in-out;
-                 transition: opacity 1s ease-in-out;
-                    }
-.crossfd img:hover{
-                    opacity: 0;
-                               }
 
 .container {
     display: flex;
@@ -52,7 +21,6 @@ html{
 .main {
     margin: 10rem 5rem 0 20rem;
 }
-
 header, footer {
     display: flex;
     justify-content: center;
@@ -83,4 +51,5 @@ li {
 }
 img {
     border-radius: 10px;
+    border: 2px solid silver;
 }

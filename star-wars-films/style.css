@@ -34,4 +34,6 @@ figcaption{
     background-color: rgba(132, 202, 248, 0.87);
     color:  rgb(34, 52, 102);
     font-family: "sf_distant_galaxy";
+    height: 2rem;
+    padding: 6px;
 }

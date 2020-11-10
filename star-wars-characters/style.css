@@ -14,7 +14,6 @@ html{
 .mainHeader {
     display: flex;
     justify-content: space-around;
-    background-color: beige;
     margin: 1rem;
 }
 #main {
@@ -40,10 +39,38 @@ button {
     background-color: #3b6ab8;
     color: #fbed66;
     text-shadow: 5px 5px 5px black;
-    border: 0;
+    border: 02px solid #fbed66;
     border-radius: 10px;
+    padding: 0 10px 0 10px;
     box-shadow: none;
     font-size: 2rem;
     font-family: sf_distant_galaxy, sans-serif;
 }
+img {
+    height: auto;
+    max-width: 100%;
+    border: 2px solid silver;
+}
+html{
+    background-image: url('https://wallpapercave.com/wp/fN6yg6C.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*I found this for css and html code at https://www.gadgetronicx.com/image-hover-effects/*/
+/*.crossfd{
+        background: url("https://wallpapercave.com/wp/wp3984510.jpg")no-repeat;
+        background-size: cover;
+        display: inline-block;
+        font-size: 0;
+             }
+.crossfd img{
+                 -webkit-transition: opacity 1s ease-in-out;
+                 -moz-transition: opacity 1s ease-in-out;
+                 -o-transition: opacity 1s ease-in-out;
+                 transition: opacity 1s ease-in-out;
+                    }
+.crossfd img:hover{
+                    opacity: 0;
+                               }
+*/
 

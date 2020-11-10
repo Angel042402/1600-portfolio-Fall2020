@@ -9,6 +9,17 @@ const dialog = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
 const modalBackground = document.querySelector('.modal-background')
 
+/*const newDiv = document.createElement('div'); //created a new div, I want to use this div to be a container for the images I want to transition from one to another.
+newDiv.className = 'container'
+document.body.insertBefore(newDiv, dialog)*/
+
+//const mainImage = document.querySelector('.main')
+
+//const newImg = document.createElement('img')// experimenting with ways to make one background img morph or fade into another
+//newImg.className = 'Darth-image'
+//document.body.insertBefore(newImg, mainImage)
+
+
 closeButton.addEventListener('click', () => {
     dialog.classList.toggle("is-active")
 })

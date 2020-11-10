@@ -19,17 +19,32 @@ const starshipMfalconButton = document.createElement('button')
 starshipMfalconButton.textContent = 'Millennium Falcon'
 mainHeader.appendChild(starshipMfalconButton)
 
+const otherButton = document.createElement('button')
+otherButton.textContent = 'Other Ships'
+mainHeader.appendChild(otherButton)
+
 const starshipFighter = starships.filter(starships => starships.starship_class === `Starfighter`)
 
 const starshipDestroyer = starships.filter(starships => starships.starship_class === `Deep Space Mobile Battlestation`)
 
 const starshipMillFalcon = starships.filter(starships => starships.starship_class === `Light freighter`)
 
+const otherShips = starships.filter((starships) => {
+    if (starships.starship_class !== 'Starfighter' ||
+        starships.starship_class !== 'Deep Space Mobile Battlestation' ||
+        starships.starship_class !== 'Light freighter') 
+        {
+        return starships
+    }
+})
+
 starshipButton.addEventListener('click', () => populateDOM(starshipFighter))
 
 starshipDButton.addEventListener('click', () => populateDOM(starshipDestroyer))
 
 starshipMfalconButton.addEventListener('click', () => populateDOM(starshipMillFalcon))
+
+otherButton.addEventListener('click', () => populateDOM(otherShips))
 
 function populateDOM(starships) {
     removeChildren(mainContent)
