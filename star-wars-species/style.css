@@ -53,3 +53,12 @@ img {
     border-radius: 10px;
     border: 2px solid silver;
 }
+figcaption {
+    text-align: center;
+    background-color: rgba(132, 202, 248, 0.87);
+    color:  rgb(34, 52, 102);
+    font-family: "sf_distant_galaxy";
+    border: 2px solid silver;
+    height: 2rem;
+    padding: 6px;
+}

@@ -1,5 +1,5 @@
 import { starships } from '../data/starships.js'
-import { removeChildren, getLastNumber} from '../utils/index.js'
+import { removeChildren, getLastNumber } from '../utils/index.js'
 
 const mainContent = document.querySelector('#main')
 
@@ -32,8 +32,7 @@ const starshipMillFalcon = starships.filter(starships => starships.starship_clas
 const otherShips = starships.filter((starships) => {
     if (starships.starship_class !== 'Starfighter' ||
         starships.starship_class !== 'Deep Space Mobile Battlestation' ||
-        starships.starship_class !== 'Light freighter') 
-        {
+        starships.starship_class !== 'Light freighter') {
         return starships
     }
 })
@@ -53,7 +52,7 @@ function populateDOM(starships) {
         const shipImg = document.createElement('img')
         let shipNum = getLastNumber(element.url)
         shipImg.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
-        shipImg.addEventListener('error', () => shipImg.hidden = true)// genius level
+        shipImg.addEventListener('error', () => shipImg.hidden = true)// genius level 
         const shipCaption = document.createElement('figcaption')
         shipCaption.textContent = element.name
 
@@ -62,7 +61,7 @@ function populateDOM(starships) {
 
         mainContent.appendChild(shipFigure)
     })
-    
+
 }
 
 

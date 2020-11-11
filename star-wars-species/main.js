@@ -5,20 +5,10 @@ const nav = document.querySelector('.nav')
 const navList = document.querySelector('.navList')
 const speciesView = document.querySelector('.main')
 
+
 const dialog = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
 const modalBackground = document.querySelector('.modal-background')
-
-/*const newDiv = document.createElement('div'); //created a new div, I want to use this div to be a container for the images I want to transition from one to another.
-newDiv.className = 'container'
-document.body.insertBefore(newDiv, dialog)*/
-
-//const mainImage = document.querySelector('.main')
-
-//const newImg = document.createElement('img')// experimenting with ways to make one background img morph or fade into another
-//newImg.className = 'Darth-image'
-//document.body.insertBefore(newImg, mainImage)
-
 
 closeButton.addEventListener('click', () => {
     dialog.classList.toggle("is-active")
@@ -36,6 +26,7 @@ function populateNav(species) {
             let specieName = event.target.textContent
             const foundSpecies = species.find(specie => specie.name === specieName)
             populateSpeciesView(foundSpecies)
+            
         })
         
         let listItem = document.createElement('li')
@@ -44,6 +35,7 @@ function populateNav(species) {
         anchorWrap.appendChild(listItem)
         navList.appendChild(anchorWrap)
         nav.appendChild(navList)
+        
     })
 
 }
@@ -60,10 +52,8 @@ function populateSpeciesView(speciesData) {
         speciesImg.hidden = true
         dialog.classList.toggle("is-active")// genius level 965!!
     })
-
     speciesView.appendChild(speciesImg)
-
     }
-    populateNav(species)
 
-    
+    populateNav(species)
+        

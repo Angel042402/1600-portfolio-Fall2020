@@ -26,14 +26,18 @@ h1 {
     text-align: center;
     font-size: 5rem;
 }
+img {
+    border: 2px solid silver;
+}
 figure{
     margin: 1rem;
 }
-figcaption{
+figcaption {
     text-align: center;
     background-color: rgba(132, 202, 248, 0.87);
     color:  rgb(34, 52, 102);
     font-family: "sf_distant_galaxy";
+    border: 2px solid silver;
     height: 2rem;
     padding: 6px;
 }
