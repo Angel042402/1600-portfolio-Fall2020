@@ -26,13 +26,11 @@ header, footer {
     justify-content: center;
     font-size: 1.75rem;
 }
-
 header {
     color:  rgb(34, 52, 102);
     font-family: "sf_distant_galaxy";
     text-shadow: 3px 3px 3px rgba(132, 202, 248, 0.87);
 }
-
 footer {
     color: rgba(132, 202, 248, 0.87);
 }
@@ -53,12 +51,4 @@ img {
     border-radius: 10px;
     border: 2px solid silver;
 }
-figcaption {
-    text-align: center;
-    background-color: rgba(132, 202, 248, 0.87);
-    color:  rgb(34, 52, 102);
-    font-family: "sf_distant_galaxy";
-    border: 2px solid silver;
-    height: 2rem;
-    padding: 6px;
-}
+

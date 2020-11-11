@@ -14,13 +14,12 @@ html{
 .mainHeader {
     display: flex;
     justify-content: space-around;
-    margin: 1rem;
+    margin: 1.75rem !important;
 }
 #main {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    
 }
 figure {
     margin: 1rem;

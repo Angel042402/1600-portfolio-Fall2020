@@ -30,8 +30,8 @@ const starshipDestroyer = starships.filter(starships => starships.starship_class
 const starshipMillFalcon = starships.filter(starships => starships.starship_class === `Light freighter`)
 
 const otherShips = starships.filter((starships) => {
-    if (starships.starship_class !== 'Starfighter' ||
-        starships.starship_class !== 'Deep Space Mobile Battlestation' ||
+    if (starships.starship_class !== 'Starfighter' &
+        starships.starship_class !== 'Deep Space Mobile Battlestation' &
         starships.starship_class !== 'Light freighter') {
         return starships
     }
@@ -48,21 +48,25 @@ otherButton.addEventListener('click', () => populateDOM(otherShips))
 function populateDOM(starships) {
     removeChildren(mainContent)
     starships.forEach(element => {
+        let error = false
         const shipFigure = document.createElement('figure')
         const shipImg = document.createElement('img')
         let shipNum = getLastNumber(element.url)
         shipImg.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
-        shipImg.addEventListener('error', () => shipImg.hidden = true)// genius level 
         const shipCaption = document.createElement('figcaption')
         shipCaption.textContent = element.name
-
+        shipImg.addEventListener('error', () => {
+            shipImg.hidden = true
+            shipCaption.hidden = true // genius level 
+        })
+        
+        
+      
         shipFigure.appendChild(shipImg)
         shipFigure.appendChild(shipCaption)
 
-        mainContent.appendChild(shipFigure)
-    })
-
-}
+        mainContent.appendChild(shipFigure)}
+    )}
 
 
 
