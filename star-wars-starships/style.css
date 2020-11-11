@@ -14,7 +14,7 @@ html{
 .mainHeader {
     display: flex;
     justify-content: space-around;
-    margin: 1.75rem !important;
+    margin: 1rem ;
 }
 #main {
     display: flex;
