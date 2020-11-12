@@ -4,7 +4,7 @@ import { removeChildren, getLastNumber } from '../utils/index.js'
 const nav = document.querySelector('.nav')
 const navList = document.querySelector('.navList')
 const speciesView = document.querySelector('.main')
-
+//let figCaption = document.createElement('figcaption') trying to figure out how to add a figcaption     
 
 const dialog = document.querySelector('.modal')
 const closeButton = document.querySelector('.modal-close')
@@ -22,6 +22,7 @@ function populateNav(species) {
     species.forEach(specie => {
         let anchorWrap = document.createElement('a')
         anchorWrap.href = '#'
+        //speciesFigcaption.textContent = specie.name trying to figure out how to add a figcaption
         anchorWrap.addEventListener('click', event => {
             let specieName = event.target.textContent
             const foundSpecies = species.find(specie => specie.name === specieName)
@@ -32,12 +33,13 @@ function populateNav(species) {
         let listItem = document.createElement('li')
         listItem.textContent = specie.name
 
+
         anchorWrap.appendChild(listItem)
         navList.appendChild(anchorWrap)
         nav.appendChild(navList)
         
     })
-
+    //figcaption.appendChild(speciesFigcaption) trying to figure out how to add a figcaption
 }
 
 function populateSpeciesView(speciesData) {

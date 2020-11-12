@@ -30,8 +30,8 @@ const starshipDestroyer = starships.filter(starships => starships.starship_class
 const starshipMillFalcon = starships.filter(starships => starships.starship_class === `Light freighter`)
 
 const otherShips = starships.filter((starships) => {
-    if (starships.starship_class !== 'Starfighter' &
-        starships.starship_class !== 'Deep Space Mobile Battlestation' &
+    if (starships.starship_class !== 'Starfighter' &&
+        starships.starship_class !== 'Deep Space Mobile Battlestation' &&
         starships.starship_class !== 'Light freighter') {
         return starships
     }
