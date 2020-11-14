@@ -48,6 +48,8 @@ li {
     list-style-type: none;
 }
 img {
+    /*position: relative;
+    z-index: 1; //look up z-index on mdn;*/
     border-radius: 10px;
     border: 2px solid silver;
 }
