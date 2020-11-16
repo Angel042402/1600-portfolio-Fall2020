@@ -1,5 +1,5 @@
 import { species } from '../data/species.js'
-import { removeChildren, getLastNumber } from '../utils/index.js'
+import { removeChildren, getLastNumber, addStarField } from '../utils/index.js'
 
 const nav = document.querySelector('.nav')
 const navList = document.querySelector('.navList')
@@ -46,6 +46,7 @@ function populateSpeciesView(speciesData) {
     removeChildren(speciesView)
     // use createElement to make new img elements*/
     let speciesImg = document.createElement("img")
+    speciesImg.className = 'speciesImg'//needed to give the image a class to separate it from the starField img so the css wouldn't conflict
     let speciesNum = getLastNumber(speciesData.url)
     // set their src to the url below
     speciesImg.src = `https://starwars-visualguide.com/assets/img/species/${speciesNum}.jpg`
@@ -59,3 +60,4 @@ function populateSpeciesView(speciesData) {
 
     populateNav(species)
         
+    addStarField(document.querySelector('body'), 1000)
