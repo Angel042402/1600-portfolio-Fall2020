@@ -24,26 +24,40 @@ function loadPage() {
 }
 
 const pokemonGrid = document.querySelector('.pokemonGrid')
+let card = document.querySelector('.card')
+
 
 function populatePokeCard(pokemon) {
     let pokeScene = document.createElement('div')
     pokeScene.className = 'scene'
-    let pokeCard = document.createElement('p')
+    let pokeCard = document.createElement('div')
     pokeCard.className = 'card'
     let cardFront = document.createElement('div')
+    cardFront.className = 'card__face card__face--front'
     let frontLabel = document.createElement('p')
+    let frontImage = document.createElement('img')
     let cardBack = document.createElement('div')
+    cardBack.className = 'card__face card__face--back'
     let backLabel = document.createElement('p')
 
-
     frontLabel.textContent = pokemon.name
+    frontImage.src = `../personal-portfolio/images/pokemon/${getImageFileName(pokemon)}.png`
     backLabel.textContent = `I'm the back of the card`
+    cardFront.appendChild(frontImage)
     cardFront.appendChild(frontLabel)
     cardBack.appendChild(backLabel)
     pokeCard.appendChild(cardFront)
     pokeCard.appendChild(cardBack)
     pokeScene.appendChild(pokeCard)
     pokemonGrid.appendChild(pokeScene)
+}
+
+function getImageFileName(pokemon) {
+    if (pokemon.id < 10) {
+        return `00${pokemon.id}`
+    } else if (pokemon.id > 9 && pokemon.id < 99) {
+        return `0${pokemon.id}`
+    }
 }
 
 loadPage()
