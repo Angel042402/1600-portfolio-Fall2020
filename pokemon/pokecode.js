@@ -57,9 +57,12 @@ function populatePokeCard(pokemon) {
  function populateCardBack(pokemon){
     let cardBack = document.createElement('div')
     cardBack.className = 'card__face card__face--back'
+    let backImage =document.createElement('img')
     let backLabel = document.createElement('p')
     backLabel.textContent = `I'm the back of the card`
-    cardBack.appendChild(backLabel)
+    backImage.src = '../personal-portfolio/images/pokemon/test_img.png'
+
+    cardBack.appendChild(backImage)
     /*pokeCard.appendChild(cardBack)*/
     return cardBack
 }

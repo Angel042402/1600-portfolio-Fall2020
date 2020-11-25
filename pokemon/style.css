@@ -2,6 +2,18 @@
     margin: 0;
     box-sizing: border-box;
 }
+/*font-face*/
+html {
+  background-image: url('https://wallpapercave.com/wp/wKcMFOD.jpg');
+}
+h1 {
+  color: #ECB206;
+}
+p {
+  font-family: arial, san serif ;
+  font-weight: bold;
+  text-align: center;
+}
 .pokemonGrid {
     display: flex;
     flex-wrap: wrap;
@@ -25,7 +37,6 @@
   .card.is-flipped {
     transform: rotateY(180deg);
   }
-  
   .card__face {
   position: absolute;
   width: 100%;
@@ -37,17 +48,10 @@
   font-size: 40px;*/
   backface-visibility: hidden;
 }
-
 .card__face--front {
   background: rgb(71, 115, 182);
 }
-
 .card__face--back {
-  background-image: url('../personal-portfolio/images/pokemon/test_img.png');
+  display: flex;
   transform: rotateY(180deg);
-}
-p {
-  font-family: arial, san serif ;
-  font-weight: bold;
-  text-align: center;
 }
