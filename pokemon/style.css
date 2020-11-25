@@ -2,15 +2,19 @@
     margin: 0;
     box-sizing: border-box;
 }
-/*font-face*/
+@ font-face{
+  font-family: 'pokemon_hollow';
+  src: '../fonts/fonts/Pokemon Hollow.ttf'
+}
 html {
   background-image: url('https://wallpapercave.com/wp/wKcMFOD.jpg');
 }
 h1 {
   color: #ECB206;
+  font-family: pokemon_hollow, san serif ;
 }
 p {
-  font-family: arial, san serif ;
+  font-family: pokemon_hollow, san serif ;
   font-weight: bold;
   text-align: center;
 }
