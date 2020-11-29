@@ -22,6 +22,35 @@ function loadPage() {
             }
         })
 }
+const pokeHeader = document.querySelector('header')
+pokeHeader.className = 'poke-header'
+
+const loadButton = document.createElement('button')
+loadButton.textContent = 'Load Pokemon'
+pokeHeader.appendChild(loadButton)
+
+loadButton.addEventListener('click', () => {
+    loadPage()
+    loadPage.disabled = true
+})
+
+/*mudsDaleButton.addEventListener('click', () => {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon/750`).then
+    (async (data) => {
+        let mudMoves = document.createElement('ul')
+        data.moves.forEach(move =>{
+            console.log(move.move.name)
+            let moveItem = document.createElement('li')
+            moveItem.textContent = move.move.name
+            mudMoves.appendChild(moveItem)
+        })
+        let mudImage = document.createElement('img')
+        mudImage.src = `../personal-portfolio/images/pokemon/750.png`
+        pokemonGrid.appendChild(mudMoves)
+        pokemonGrid.appendChild(mudImage)
+    })
+})*/
+
 
 const pokemonGrid = document.querySelector('.pokemonGrid')
 let card = document.querySelector('.card')
@@ -34,14 +63,14 @@ function populatePokeCard(pokemon) {
     pokeCard.addEventListener('click', () => {
         pokeCard.classList.toggle('is-flipped')
     })
-    
+
     pokeCard.appendChild(populateCardFront(pokemon))
     pokeCard.appendChild(populateCardBack(pokemon))
     pokeScene.appendChild(pokeCard)
     pokemonGrid.appendChild(pokeScene)
 }
 
- function populateCardFront(pokemon){
+function populateCardFront(pokemon) {
     let cardFront = document.createElement('div')
     cardFront.className = 'card__face card__face--front'
     let frontLabel = document.createElement('p')
@@ -52,15 +81,13 @@ function populatePokeCard(pokemon) {
     cardFront.appendChild(frontLabel)
     frontLabel.textContent = `${pokemon.name}`
     return cardFront
- }
+}
 
- function populateCardBack(pokemon){
+function populateCardBack() {
     let cardBack = document.createElement('div')
-    cardBack.className = 'card__face card__face--back'
+    cardBack.className = 'card__face card__face--back'//you can set more than one class by separating with a space
     let backImage = document.createElement('img')
     backImage.className = 'card_back_image'
-    let backLabel = document.createElement('p')
-    backLabel.textContent = `I'm the back of the card`
     backImage.src = '../personal-portfolio/images/pokemon/test_img.png'
     cardBack.appendChild(backImage)
     return cardBack
@@ -73,5 +100,13 @@ function getImageFileName(pokemon) {
         return `0${pokemon.id}`
     }
 }
+function Pokemon(name, height, weight, abilities) {
+    this.name = name
+    this.height = height
+    this.weight = weight
+    this.abilities = abilities
+    this.id = 900
+}
 
-loadPage()
+let angelmon = new Pokemon('Angelmon', 62, 'unknown', ['junkfood-consumption', 'cat-whisperer'])
+console.log(angelmon)
