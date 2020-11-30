@@ -69,7 +69,11 @@ p {
   height: 100%;
   border-radius: 10px;
 }
+
 button {
+  display: inline-flex;           /*need to 
+  justify-content: space-around;  work on 
+  margin: 2rem;                   this*/
   color: #ECB206;
   font-family: 'pokemon_hollow', 'san serif';
   font-size: 2rem;

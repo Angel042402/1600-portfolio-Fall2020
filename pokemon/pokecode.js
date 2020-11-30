@@ -29,6 +29,10 @@ const loadButton = document.createElement('button')
 loadButton.textContent = 'Load Pokemon'
 pokeHeader.appendChild(loadButton)
 
+const morepokeButton =document.createElement('button')
+morepokeButton.textContent = 'load more Pokemon!'
+pokeHeader.appendChild(morepokeButton)
+
 loadButton.addEventListener('click', () => {
     loadPage()
     loadPage.disabled = true
@@ -50,6 +54,7 @@ loadButton.addEventListener('click', () => {
         pokemonGrid.appendChild(mudImage)
     })
 })*/
+
 
 
 const pokemonGrid = document.querySelector('.pokemonGrid')
@@ -83,7 +88,7 @@ function populateCardFront(pokemon) {
     return cardFront
 }
 
-function populateCardBack() {
+function populateCardBack(pokemon) {
     let cardBack = document.createElement('div')
     cardBack.className = 'card__face card__face--back'//you can set more than one class by separating with a space
     let backImage = document.createElement('img')
