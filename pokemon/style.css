@@ -63,7 +63,8 @@ p {
   background: rgb(71, 115, 182);
 }
 .card__face--back {
-  display: flex;
+  background-color:#122469;
+  color:#ECB206;
   transform: rotateY(180deg); /*when card is rotated, or rotated, card back isn't visible*/
   width: 100%;
   height: 100%;

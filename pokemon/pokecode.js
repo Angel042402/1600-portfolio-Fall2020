@@ -12,7 +12,7 @@ async function getAPIData(url) {
 
 // now, use the async getAPIData function
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon`).then
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then
         (async (data) => {
             for (const pokemon of data.results) {
                 await getAPIData(pokemon.url).then((pokeData) => {
@@ -29,7 +29,7 @@ const loadButton = document.createElement('button')
 loadButton.textContent = 'Load Pokemon'
 pokeHeader.appendChild(loadButton)
 
-const morepokeButton =document.createElement('button')
+const morepokeButton = document.createElement('button')
 morepokeButton.textContent = 'load more Pokemon!'
 pokeHeader.appendChild(morepokeButton)
 
@@ -91,11 +91,43 @@ function populateCardFront(pokemon) {
 function populateCardBack(pokemon) {
     let cardBack = document.createElement('div')
     cardBack.className = 'card__face card__face--back'//you can set more than one class by separating with a space
+    let backLabel = document.createElement('p')
+    backLabel.textContent = `Abilities:`
+    let abilityList = document.createElement('ul')
+    pokemon.abilities.forEach(ability => {
+        let abilityName = document.createElement('li')
+        abilityName.textContent = ability.ability.name
+        abilityList.appendChild(abilityName)
+    })
+    let movesLabel =document.createElement('h3')
+    movesLabel.textContent = 'Most Accurate Move:'
+    let moveAccuracy = document.createElement('h4')
+    const mostAccurateMove = getBestAccuracyAndPower(pokemon.moves)
+    //moveAccuracy.textContent = `${mostAccurateMove.move.name}`
     let backImage = document.createElement('img')
     backImage.className = 'card_back_image'
     backImage.src = '../personal-portfolio/images/pokemon/test_img.png'
-    cardBack.appendChild(backImage)
+    cardBack.appendChild(backLabel)
+    cardBack.appendChild(abilityList)
+    cardBack.appendChild(movesLabel)
+    cardBack.appendChild(moveAccuracy)
     return cardBack
+}
+
+function getBestAccuracyAndPower(pokemoves){
+    return pokemoves.reduce((mostAccurate, move) => {
+    //console.log(move.move.url)
+        getAPIData(move.move.url).then
+        (async (data) => {
+            /*let mudMoves = document.createElement('ul')
+            data.moves.forEach(move =>{*/
+                console.log(data.accuracy, data.power)
+                /*let moveItem = document.createElement('li')
+                moveItem.textContent = move.move.name
+                mudMoves.appendChild(moveItem)*/
+            })  
+        //return mostAccurate.accuracy > move.accuracy ? mostAccurate : move;
+    }, {});
 }
 
 function getImageFileName(pokemon) {
@@ -113,5 +145,5 @@ function Pokemon(name, height, weight, abilities) {
     this.id = 900
 }
 
-let angelmon = new Pokemon('Angelmon', 62, 'unknown', ['junkfood-consumption', 'cat-whisperer'])
+let angelmon = new Pokemon('Angelmon', 62, 'unknown', ['junkfood-consumption', 'cat-whisperer', 'tired-always'])
 console.log(angelmon)
