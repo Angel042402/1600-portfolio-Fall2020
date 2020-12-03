@@ -22,6 +22,7 @@ function loadPage() {
             }
         })
 }
+
 const pokeHeader = document.querySelector('header')
 pokeHeader.className = 'poke-header'
 
@@ -35,7 +36,7 @@ pokeHeader.appendChild(morepokeButton)
 
 loadButton.addEventListener('click', () => {
     loadPage()
-    loadPage.disabled = true
+    loadButton.disabled = true //populates cards once then disables the load button
 })
 
 /*mudsDaleButton.addEventListener('click', () => {
@@ -59,6 +60,23 @@ loadButton.addEventListener('click', () => {
 
 const pokemonGrid = document.querySelector('.pokemonGrid')
 let card = document.querySelector('.card')
+
+/*otherButton.addEventListener('click', () => populateDOM(otherShips))
+
+function populateDOM(starships) {
+    removeChildren(mainContent)
+    starships.forEach(element => {
+        let error = false
+        const shipFigure = document.createElement('figure')
+        const shipImg = document.createElement('img')
+        let shipNum = getLastNumber(element.url)
+        shipImg.src = `https://starwars-visualguide.com/assets/img/starships/${shipNum}.jpg`
+        const shipCaption = document.createElement('figcaption')
+        shipCaption.textContent = element.name
+        shipImg.addEventListener('error', () => {
+            shipImg.hidden = true
+            shipCaption.hidden = true // genius level 
+        })*/
 
 function populatePokeCard(pokemon) {
     let pokeScene = document.createElement('div')

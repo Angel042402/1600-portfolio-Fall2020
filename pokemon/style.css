@@ -12,7 +12,9 @@ html {
   background-size: cover;
   background-position: center;
 }
-
+ul h3 {
+  color: #122469;/*#ECB206 */
+}
 
 h1 {
   color: #122469;/*#ECB206 */
@@ -22,11 +24,9 @@ h1 {
   margin: 15px;
 }
 p {
-  color: #122469;/*#ECB206 */
   font-family: 'pokemon_hollow', 'san serif' ;
   font-weight: bold;
   text-align: center;
-  filter: drop-shadow(20px 8px 1px rgb(77, 77, 74));
 }
 .pokemonGrid {
     display: flex;
@@ -62,10 +62,16 @@ p {
 }
 .card__face--front {
   background: rgb(141, 207, 228);
-
+}
+.card__face--front{
+  color: #122469;
+}
+.card__face--front p {
+  filter: drop-shadow(20px 8px 1px rgb(77, 77, 74));
 }
 .card__face--back {
-  background-color:#122469;
+  background:#122469;
+  background: linear-gradient(#122469,#ECB206);
   color:#ECB206;
   transform: rotateY(180deg); /*when card is rotated, or rotated, card back isn't visible*/
   width: 100%;
