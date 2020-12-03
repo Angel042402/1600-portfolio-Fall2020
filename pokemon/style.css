@@ -15,17 +15,18 @@ html {
 
 
 h1 {
-  color: #ECB206;
+  color: #122469;/*#ECB206 */
   font-family: 'pokemon_hollow', 'san serif' ;
   font-size: 4rem;
   text-align: center;
   margin: 15px;
 }
 p {
-  color: #ECB206;
+  color: #122469;/*#ECB206 */
   font-family: 'pokemon_hollow', 'san serif' ;
   font-weight: bold;
   text-align: center;
+  filter: drop-shadow(20px 8px 1px rgb(77, 77, 74));
 }
 .pokemonGrid {
     display: flex;
@@ -60,7 +61,8 @@ p {
   border-radius: 10px;
 }
 .card__face--front {
-  background: rgb(71, 115, 182);
+  background: rgb(141, 207, 228);
+
 }
 .card__face--back {
   background-color:#122469;
@@ -70,7 +72,16 @@ p {
   height: 100%;
   border-radius: 10px;
 }
-
+li {
+list-style-type: circle;/* liked this type better*/
+text-align: justify; /*this fixed the alignment*/
+}
+.poke_image {
+  width: 180px;
+  height:180px;
+  margin: 15px 0 0 0;
+  filter: drop-shadow(10px 5px 1.5px rgb(66, 66, 62));/*wanted to give the image a 3d look, the 1st input is offset-x, then offset-y, the blur radius, then its color*/
+}
 button {
   display: inline-flex;           /*need to 
   justify-content: space-around;  work on 
