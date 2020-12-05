@@ -121,7 +121,7 @@ function populateCardBack(pokemon) {
     let movesLabel =document.createElement('h3')
     movesLabel.textContent = 'Most Accurate Move:'
     let moveAccuracy = document.createElement('h4')
-    const mostAccurateMove = getBestAccuracyAndPower(pokemon.moves)
+    //const mostAccurateMove = getBestAccuracyAndPower(pokemon.moves)
     //moveAccuracy.textContent = `${mostAccurateMove.move.name}`
     let backImage = document.createElement('img')
     backImage.className = 'card_back_image'
