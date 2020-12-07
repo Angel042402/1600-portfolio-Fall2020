@@ -1,9 +1,19 @@
-body {
+html {
+  background-image: url('/personal-portfolio/images/congress/american-4402598_1920.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+  /*body {
     background-color: #CECECE;
-  }
+  }*/
   
   header {
     text-align: center;
+    color: white;
+    font-size: 2rem;
+  }
+  img{
+    border: 5px solid white;
   }
   
   .senatorGrid {
@@ -18,4 +28,5 @@ body {
   figcaption {
     display: flex;
     justify-content: space-around;
+    color: white;
   }

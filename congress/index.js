@@ -89,6 +89,20 @@ function senioritySort() {
     )
   }
 
+  // trying to assign a font color based on party
+  /*function partyColorSort() {
+    const senatorColor = senator.name
+    if (senator.party === 'R'){
+      senatorColor.style.color = 'red'
+    }
+    if (senator.party === 'D') {
+      senatorColor.style.fontcolor('blue')
+    }
+    if (senator.party === 'ID') {
+      senatorColor.style.fontcolor('white')
+    }
+  }*/
+
   //by default on page load, we show all senators unsorted
   populateSenatorDiv(getSimplifiedSenators(senators))
   
