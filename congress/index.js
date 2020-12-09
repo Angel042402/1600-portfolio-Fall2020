@@ -1,9 +1,16 @@
 import { senators } from '../data/senators.js'
+import { representatives } from '../data/representatives.js'
 import { removeChildren } from '../utils/index.js'
 
 const senatorGrid = document.querySelector('.senatorGrid')
-const seniorityButton = document.querySelector('#seniorityButton')
-const birthdayButton = document.querySelector('#birthdayButton')
+const representativeGrid = document.querySelector('.representativeGrid')
+//const seniorityButton = document.querySelector('#seniorityButton')
+//const birthdayButton = document.querySelector('#birthdayButton')
+//const houseOfCongress = document.querySelector('houseButton')
+
+houseButton.addEventListener('click', () => {
+  houseSort()
+})
 
 seniorityButton.addEventListener('click', () => {
     senioritySort()
@@ -36,6 +43,29 @@ function populateSenatorDiv(simpleSenators) {
     })
   }
 
+  function populateRepresentativeDiv(simpleRepresentatives) {
+    removeChildren(representativeGrid)
+    simpleRepresentatives.forEach(representative => {
+        let repDiv = document.createElement('div')
+        let repFigure = document.createElement('figure')
+        let figImg = document.createElement('img')
+        let figCaption = document.createElement('figcaption')
+        let partyIcon = document.createElement('i')
+        if (representative.party === 'R') partyIcon.className = 'fas fa-republican'
+        if (representative.party === 'D') partyIcon.className = 'fas fa-democrat'
+        if (representative.party === 'ID') partyIcon.className = 'fas fa-star'
+        figImg.src = representative.imgURL
+        figCaption.textContent =representative.name
+  
+        figCaption.appendChild(partyIcon)
+        repFigure.appendChild(figImg)
+        repFigure.appendChild(figCaption)
+        repDiv.appendChild(repFigure)
+        //senDiv.appendChild(progressBars(senator))
+        representativeGrid.appendChild(repDiv)
+    })
+  }
+
   function getSimplifiedSenators(senatorArray) {
     return senatorArray.map(senator => {
         let middleName = senator.middle_name ? ` ${senator.middle_name} ` : ` `
@@ -52,7 +82,23 @@ function populateSenatorDiv(simpleSenators) {
     })
   }
 
-  const mostSeniority = getSimplifiedSenators(senators).reduce((acc, senator) => acc.seniority > senator.seniority ? acc : senator)
+  function getSimplifiedRepresentative(representativeArray) {
+    return representativeArray.map(representative => {
+        let middleName = representative.middle_name ? ` ${representative.middle_name} ` : ` `
+        return {
+            id: representative.id,
+            name: `${representative.first_name}${middleName}${representative.last_name}`,
+            imgURL: `https://www.govtrack.us/static/legislator-photos/${representative.govtrack_id}-200px.jpeg`,
+            seniority: parseInt(representative.seniority, 10),
+            missedVotesPct: representative.missed_votes_pct,
+            party: representative.party,
+            loyaltyPct: representative.votes_with_party_pct,
+            date_of_birth: representative.date_of_birth
+        }
+    })
+  }
+
+ /* const mostSeniority = getSimplifiedSenators(senators).reduce((acc, senator) => acc.seniority > senator.seniority ? acc : senator)
 
   const missedVotes = getSimplifiedSenators(senators).reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
 
@@ -81,13 +127,28 @@ function senioritySort() {
     })
     )
   }
+
+  // sort by legislative branch
+  function titleSort() {
+    populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
+        return parseInt(a.seniority) - parseInt(b.seniority)
+    })
+    )
+  }
+
+  function houseSort() {
+    populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
+        return parseInt(a.seniority) - parseInt(b.seniority)
+    })
+    )
+  }
   
   function birthdaySort() {
     populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
         return parseInt(a.date_of_birth) - parseInt(b.date_of_birth)
     })
     )
-  }
+  }*/
 
   // trying to assign a font color based on party
   /*function partyColorSort() {
@@ -105,4 +166,5 @@ function senioritySort() {
 
   //by default on page load, we show all senators unsorted
   populateSenatorDiv(getSimplifiedSenators(senators))
+  populateRepresentativeDiv(getSimplifiedRepresentative(representatives))
   

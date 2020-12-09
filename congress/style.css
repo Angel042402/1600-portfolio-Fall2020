@@ -3,9 +3,10 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
 }
-  /*body {
-    background-color: #CECECE;
-  }*/
+  body {
+   font-family: open sans, sans-serif;
+   font-weight: bold;
+  }
   
   header {
     text-align: center;
@@ -20,6 +21,10 @@ html {
     display: flex;
     flex-wrap: wrap;
   }
+  .representativeGrid {
+    display: flex;
+    flex-wrap: wrap;
+  }
   
   figure {
     margin: .5rem;
@@ -28,5 +33,6 @@ html {
   figcaption {
     display: flex;
     justify-content: space-around;
-    color: white;
-  }
+    font-size: 1.1rem;
+    color: rgb(124, 105, 105);
+    }
