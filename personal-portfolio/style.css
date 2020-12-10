@@ -20,6 +20,7 @@ header {
 }
 .profile-pic {
   height: 195px;
+  border: 2px solid  #c0aD7D;
 }
 #info {
   display: flex;

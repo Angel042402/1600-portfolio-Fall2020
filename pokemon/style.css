@@ -89,13 +89,12 @@ text-align: justify; /*this fixed the alignment*/
   filter: drop-shadow(10px 5px 1.5px rgb(66, 66, 62));/*wanted to give the image a 3d look, the 1st input is offset-x, then offset-y, the blur radius, then its color*/
 }
 button {
-  display: inline-flex;           /*need to 
-  justify-content: space-around;  work on 
-  margin: 2rem;                   this*/
+  display: inline-flex;           
+  justify-content: space-between;  
+  margin: 2rem;                   
   color: #ECB206;
   font-family: 'pokemon_hollow', 'san serif';
-  font-size: 2rem;
+  font-size: 1.5rem;
   background-color: #122469;
   border-radius: 10px;
 }
-
