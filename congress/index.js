@@ -98,7 +98,7 @@ function populateSenatorDiv(simpleSenators) {
     })
   }
 
- /* const mostSeniority = getSimplifiedSenators(senators).reduce((acc, senator) => acc.seniority > senator.seniority ? acc : senator)
+ const mostSeniority = getSimplifiedSenators(senators).reduce((acc, senator) => acc.seniority > senator.seniority ? acc : senator)
 
   const missedVotes = getSimplifiedSenators(senators).reduce((acc, senator) => acc.missedVotesPct > senator.missedVotesPct ? acc : senator)
 
@@ -129,12 +129,12 @@ function senioritySort() {
   }
 
   // sort by legislative branch
-  function titleSort() {
-    populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
-        return parseInt(a.seniority) - parseInt(b.seniority)
+  /*function titleSort() {
+    populateSenatorDiv(getSimplifiedSenators(senators).sort(title => {
+        return senators.title
     })
     )
-  }
+  }*/
 
   function houseSort() {
     populateSenatorDiv(getSimplifiedSenators(senators).sort((a, b) => {
@@ -148,12 +148,12 @@ function senioritySort() {
         return parseInt(a.date_of_birth) - parseInt(b.date_of_birth)
     })
     )
-  }*/
+  }
 
   // trying to assign a font color based on party
-  /*function partyColorSort() {
-    const senatorColor = senator.name
-    if (senator.party === 'R'){
+  /*function branchSort() {
+    const congressBranch = senator.title
+    if (congressBranch == 'Senator'){
       senatorColor.style.color = 'red'
     }
     if (senator.party === 'D') {
