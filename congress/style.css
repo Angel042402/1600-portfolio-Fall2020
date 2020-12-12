@@ -1,5 +1,5 @@
 html {
-  background-image: url('/personal-portfolio/images/congress/american-4402598_1920.jpg');
+  background-image: url('../personal-portfolio/images/congress/american-4402598_1920.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -21,7 +21,7 @@ html {
     display: flex;
     flex-wrap: wrap;
   }
-  .representativeGrid {
+  .senatorGrid {
     display: flex;
     flex-wrap: wrap;
   }
@@ -36,3 +36,4 @@ html {
     font-size: 1.1rem;
     color: rgb(124, 105, 105);
     }
+    

@@ -1,0 +1,41 @@
+html {
+    background-image: url('/personal-portfolio/images/congress/united-states-1524261_1280.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+body {
+    font-family: open sans, sans-serif;
+    font-weight: bold;
+   }
+   
+header {
+     text-align: center;
+     color: white;
+     font-size: 2rem;
+   }
+img {
+     border: 5px solid white;
+   }
+   
+.representativeGrid {
+     display: flex;
+     flex-wrap: wrap;
+   }
+
+figure {
+     margin: .5rem;
+   }
+   
+figcaption {
+     display: flex;
+     justify-content: space-around;
+     font-size: 1.1rem;
+     color:rgb(255, 1, 1);
+     }
+#buttonHeader  {
+    display: flex;
+    justify-content: center; 
+}  
+button {
+    margin: 10px ;
+}

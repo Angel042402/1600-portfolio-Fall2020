@@ -13,7 +13,7 @@ html {
   background-position: center;
 }
 ul h3 {
-  color: #122469;/*#ECB206 */
+  color: #122469; /*#ECB206 */
   text-align: center;
 }
 
@@ -77,14 +77,11 @@ div {
   background-position: center;
   border: 2px solid black
 }
-/*.card__face--front{
-  color: #122469;
-}*/
 .card__face--front p {
   filter: drop-shadow(20px 8px 1px rgb(77, 77, 74));
 }
 .card__face--back p {
-  text-align: center;
+  text-align: center; 
 }
 .card__face--back {
   background-image: url('../personal-portfolio/images/pokemon/pokemon_3.jpg');
@@ -97,11 +94,10 @@ div {
   height: 100%;
   border-radius: 10px;
   border: 2px solid black
-  
 }
 li {
 list-style-type: circle;/* liked this type better*/
-text-align: justify; /*this fixed the alignment*/
+align-items: center; /*this fixed the alignment*/
 }
 .poke_image {
   width: 180px;

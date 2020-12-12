@@ -1,19 +1,19 @@
 //Reusable async function to fetch data from the provided url
 async function getAPIData(url) {
     try {
-        const response = await fetch(url)
-        const data = await response.json()
+        const response = await fetch(url)//gets the contents of the url
+        const data = await response.json()//contents of url are stored in 'data'
         return data
-    } catch (error) {
+    } catch (error) {//can console.error() to see error in console, like console.log()
         console.error(error)
     }
 }
 // now, use the async getAPIData function
 function loadPage() {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then
-        (async (data) => {
-            for (const pokemon of data.results) {
-                await getAPIData(pokemon.url).then((pokeData) => {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then//a call to get data from the api ,chain a then method
+        (async (data) => {//await the api call
+            for (const pokemon of data.results) {//loops thru the data for results array
+                await getAPIData(pokemon.url).then((pokeData) => {//pass an individual pokemon its url property, chain a 'then' because its async., get back pokeData from the url for an individual pokemon
                     console.log(pokeData)
                     populatePokeCard(pokeData)
                 })
@@ -24,11 +24,9 @@ function loadPage() {
 const pokemonGrid = document.querySelector('.pokemonGrid')
 let card = document.querySelector('.card')
 
-
 //make a div for buttons
 const mainPokeDiv = document.querySelector('div')
 mainPokeDiv.className = 'poke-container'
-
 
 //make buttons to load cards
 const loadButton = document.createElement('button')
@@ -41,24 +39,46 @@ loadButton.addEventListener('click', () => {
     loadButton.disabled = true //populates cards once then disables the load button
 })
 
+//add fire chars
 const fireButton = document.createElement('button')
 fireButton.textContent = 'Fire Pokemon'
 mainPokeDiv.appendChild(fireButton)
 
-/*fireButton.addEventListener('click', () => {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then
-        (async (data) => {
-            for (const pokemon of data.results) {
-                await getAPIData('https://pokeapi.co/api/v2/type/10').then((pokeData) => {
+/*const mudButton = document.createElement('button')
+fireButton.textContent = 'Mud Pokemon'
+mainPokeDiv.appendChild(mudButton)
+
+mudButton.addEventListener('click', () => {
+   getAPIData(`https://pokeapi.co/api/v2/pokemon/750`).then
+       (async (data) => {
+           let mudMoves = document.createElement('ul')
+           data.moves.forEach(move => {
+               console.log(move.move.name)
+               let moveItem = document.createElement('li')
+               moveItem.textContent = move.move.name
+               mudMoves.appendChild(moveItem)
+           })
+           let mudImage = document.createElement('img')
+           mudImage.src = `../images/pokemon/750.png`
+           pokemonGrid.appendChild(mudMoves)
+           pokemonGrid.appendChild(mudImage)
+   })
+}) 
+*/
+
+fireButton.addEventListener('click', () => {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=692&offset=36`).then// get pokemon 37 thru 727
+        (async (data) => {// I have to make a call for each individual pokemon's url, this is for charmander's 1 :move: {name: "fire-punch", url: "https://pokeapi.co/api/v2/move/7/"}
+            {await getAPIData('https://pokeapi.co/api/v2/pokemon/move/7').then((pokeData) => {//get pokemon for type/10 - 'fire'-
                     console.log(pokeData)
-                    populatePokeCard(pokeData)
+                    populatePokeCard(pokeData)//populate card with pokeData
                 })
             }
         })
-    })*/
+})
 
 
-//populate cards and toggle flip
+//an individual pokemon is passed to the function, populate cards and toggle flip the card
 function populatePokeCard(pokemon) {
     let pokeScene = document.createElement('div')
     pokeScene.className = 'scene'
@@ -67,6 +87,9 @@ function populatePokeCard(pokemon) {
     pokeCard.addEventListener('click', () => {
         pokeCard.classList.toggle('is-flipped')
     })
+    let frontLabel = document.createElement('p')
+    frontLabel.textContent = pokemon.name
+    pokemonGrid.appendChild(frontLabel)
     pokeCard.appendChild(populateCardFront(pokemon))
     pokeCard.appendChild(populateCardBack(pokemon))
     pokeScene.appendChild(pokeCard)
@@ -80,13 +103,17 @@ function populateCardFront(pokemon) {
     let frontLabel = document.createElement('p')
     let frontImage = document.createElement('img')
     frontImage.className = 'poke_image'
-    frontLabel.textContent = pokemon.name
+
+    //frontLabel.textContent = pokemon.name
     frontImage.src = `../personal-portfolio/images/pokemon/${getImageFileName(pokemon)}.png`
     cardFront.appendChild(frontImage)
     cardFront.appendChild(frontLabel)
     frontLabel.textContent = `${pokemon.name}`
     return cardFront
 }
+
+
+
 //make card back with abilities and stats
 function populateCardBack(pokemon) {
     let cardBack = document.createElement('div')
@@ -137,16 +164,8 @@ function getImageFileName(pokemon) {
     }
 }
 
-/*function getPokeType(pokemon) {
-    if (pokemon.moves.move.name === 'fire') {
-        return `${pokemon.moves.move.name}`
-        console.log(pokemon.moves.move.name)
-    
-    }
-}*/
-
 // get pokemon stats
-/*function Pokemon(name, height, weight, abilities, moves) {
+function Pokemon(name, height, weight, abilities, moves) {
     this.name = name
     this.height = height
     this.weight = weight
@@ -155,12 +174,12 @@ function getImageFileName(pokemon) {
     this.moves = moves
 }
 //make personal pokemon array
-let angelmon = new Pokemon('Angelmon', 62, 'Uh, no. Just no', ['junkfood-consumption', 'cat-whisperer', 'most-excellent-grandma'])
+let angelmon = new Pokemon('Angelmon', 620, 400, ['junkfood-consumption', 'cat-whisperer', 'most-excellent-grandma'])
 console.log(angelmon)
 //make a new pokemon
 function createNewPokemon(name) {
-    return new Pokemon(name, 62, 'Uh, no. Just no', ['junkfood-consumption', 'cat-whisperer', 'most-excellent-grandma'])
-}*/
+    return new Pokemon(name, 620, '400', ['junkfood-consumption', 'cat-whisperer', 'most-excellent-grandma'])
+}
 
 
 
@@ -174,7 +193,6 @@ function createNewPokemon(name) {
                 moveItem.textContent = move.moves
                 mudMoves.appendChild(fireItem)
             })
-            if (fireMoves === 'fire') {
                 let fireImage = document.createElement('img')
                 fireImage.src = `../personal-portfolio/images/pokemon/001.png`
                 pokemonGrid.appendChild(fireMoves)
@@ -183,15 +201,27 @@ function createNewPokemon(name) {
         })
 })*/
 
+/*fireButton.addEventListener('click', () => {
+  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then
+    (async (data) => {
+        for (const pokemon of data.results) {
+            await getAPIData('https://pokeapi.co/api/v2/type/10').then((pokeData) => {
+                console.log(pokeData)
+                populatePokeCard(pokeData)
+            })
+        }
+    }
+) */
 
-function findType(pokemon) {
+
+/*function findType(pokemon) {
     for (i = 0; i > pokemon.length - 1; i++) {
         if (pokemon.move.move.name === 'fire') {
 
             console.log(pokemon)
         }
     }
-}
+}*/
 
 /*const morePokeButton = document.createElement('button')
 morePokeButton.className = 'more-pokemon'
@@ -202,3 +232,14 @@ pokeHeader.appendChild(morePokeButton)*/
     let pokeName = prompt("What's your new Pokemon's name?");
     populatePokeCard(createNewPokemon(pokeName))
 })*/
+/*fireButton.addEventListener('click', () => {
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then
+        (async (data) => {
+            for (const pokemon of data.results) {
+                await getAPIData('https://pokeapi.co/api/v2/type/10').then((pokeData) => {
+                    console.log(pokeData)
+                    populatePokeCard(pokeData)
+                })
+            }
+        })
+    })*/
