@@ -80,9 +80,9 @@ div {
 .card__face--front p {
   filter: drop-shadow(20px 8px 1px rgb(77, 77, 74));
 }
-.card__face--back p {
+/*.card__face--back p {
   text-align: center; 
-}
+}*/
 .card__face--back {
   background-image: url('../personal-portfolio/images/pokemon/pokemon_3.jpg');
   background-repeat: no-repeat;

@@ -44,6 +44,13 @@ const fireButton = document.createElement('button')
 fireButton.textContent = 'Fire Pokemon'
 mainPokeDiv.appendChild(fireButton)
 
+/*const newButton = document.querySelector('#newPokemon')
+
+newButton.addEventListener('click', () => {
+    let pokeName = prompt("What's your new Pokemon's name?");
+    populatePokeCard(createNewPokemon(pokeName))
+  })*/
+
 /*const mudButton = document.createElement('button')
 fireButton.textContent = 'Mud Pokemon'
 mainPokeDiv.appendChild(mudButton)
@@ -66,7 +73,7 @@ mudButton.addEventListener('click', () => {
 }) 
 */
 
-fireButton.addEventListener('click', () => {
+/*fireButton.addEventListener('click', () => {
     getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=692&offset=36`).then// get pokemon 37 thru 727
         (async (data) => {// I have to make a call for each individual pokemon's url, this is for charmander's 1 :move: {name: "fire-punch", url: "https://pokeapi.co/api/v2/move/7/"}
             {await getAPIData('https://pokeapi.co/api/v2/pokemon/move/7').then((pokeData) => {//get pokemon for type/10 - 'fire'-
@@ -75,8 +82,7 @@ fireButton.addEventListener('click', () => {
                 })
             }
         })
-})
-
+})*/
 
 //an individual pokemon is passed to the function, populate cards and toggle flip the card
 function populatePokeCard(pokemon) {
@@ -89,7 +95,6 @@ function populatePokeCard(pokemon) {
     })
     let frontLabel = document.createElement('p')
     frontLabel.textContent = pokemon.name
-    pokemonGrid.appendChild(frontLabel)
     pokeCard.appendChild(populateCardFront(pokemon))
     pokeCard.appendChild(populateCardBack(pokemon))
     pokeScene.appendChild(pokeCard)
@@ -103,8 +108,7 @@ function populateCardFront(pokemon) {
     let frontLabel = document.createElement('p')
     let frontImage = document.createElement('img')
     frontImage.className = 'poke_image'
-
-    //frontLabel.textContent = pokemon.name
+    frontLabel.textContent = pokemon.name
     frontImage.src = `../personal-portfolio/images/pokemon/${getImageFileName(pokemon)}.png`
     cardFront.appendChild(frontImage)
     cardFront.appendChild(frontLabel)
@@ -126,16 +130,14 @@ function populateCardBack(pokemon) {
         abilityName.textContent = ability.ability.name
         abilityList.appendChild(abilityName)
     })
-
     let movesLabel = document.createElement('h3')
     movesLabel.textContent = 'Stats:'
     let moveAccuracy = document.createElement('h4')
-
     let pokeWeight = document.createElement('h5')
     pokeWeight.textContent = `Weight: ${pokemon.weight} lbs.`
-    let backImage = document.createElement('img')
+    /*let backImage = document.createElement('img')
     backImage.className = 'card_back_image'
-    backImage.src = '../personal-portfolio/images/pokemon/test_img.png'
+    backImage.src = '../personal-portfolio/images/pokemon/test_img.png'*/
     cardBack.appendChild(backLabel)
     cardBack.appendChild(abilityList)
     cardBack.appendChild(movesLabel)
@@ -174,8 +176,9 @@ function Pokemon(name, height, weight, abilities, moves) {
     this.moves = moves
 }
 //make personal pokemon array
-let angelmon = new Pokemon('Angelmon', 620, 400, ['junkfood-consumption', 'cat-whisperer', 'most-excellent-grandma'])
-console.log(angelmon)
+/*let angelmon = new Pokemon('Angelmon', 620, 400, ['junkfood-consumption', 'cat-whisperer', 'most-excellent-grandma'])
+console.log(angelmon)*/
+
 //make a new pokemon
 function createNewPokemon(name) {
     return new Pokemon(name, 620, '400', ['junkfood-consumption', 'cat-whisperer', 'most-excellent-grandma'])

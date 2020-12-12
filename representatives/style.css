@@ -11,7 +11,8 @@ body {
 header {
      text-align: center;
      color: white;
-     font-size: 2rem;
+     font-size: 3rem;
+     margin: 20px;
    }
 img {
      border: 5px solid white;
@@ -30,12 +31,21 @@ figcaption {
      display: flex;
      justify-content: space-around;
      font-size: 1.1rem;
-     color:rgb(255, 1, 1);
+     color:rgb(255, 255, 255);
      }
 #buttonHeader  {
     display: flex;
     justify-content: center; 
 }  
-button {
-    margin: 10px ;
+button{
+  display: inline;
+  background-color: maroon;
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  border-radius: 7px;
+  margin: 10px;
+}
+button:hover {
+  background-color: rgb(52, 52, 124);
 }
