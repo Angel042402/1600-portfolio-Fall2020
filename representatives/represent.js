@@ -7,13 +7,6 @@ const seniorityButton = document.querySelector('#seniorityButton')
 const birthdayButton = document.querySelector('#birthdayButton')
 //const representButton = document.querySelector('#representButton')
 
-/*const loadButton = document.createElement('button')
-loadButton.textContent = 'Load Senators'
-
-loadButton.addEventListener('click', () => {
-  loadPage()
-  loadButton.disabled = true //populates cards once then disables the load button
-})*/
 
 seniorityButton.addEventListener('click', () => {
     senioritySort()

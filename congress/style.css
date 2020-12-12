@@ -1,6 +1,6 @@
 html {
-  background-image: url('../personal-portfolio/images/congress/united-states-1524261_1280.jpg');
-    /*background-repeat: no-repeat;*/
+  background-image: url('../personal-portfolio/images/congress/capitol.png');
+    background-repeat: no-repeat;
     background-size: cover;
 }
   body {
@@ -34,7 +34,7 @@ html {
     display: flex;
     justify-content: space-around;
     font-size: 1.1rem;
-    color: rgb(253, 253, 253);
+    color: #fff;
     }
     button{
       display: inline;
