@@ -12,11 +12,6 @@ html {
   background-size: cover;
   background-position: center;
 }
-ul h3 {
-  color: #122469; /*#ECB206 */
-  text-align: center;
-}
-
 h1 {
   color: #ECB206 ;/*#ECB206 */
   font-family: 'pokemon_hollow', 'san serif' ;
@@ -26,8 +21,9 @@ h1 {
 }
 p {
   font-family: 'pokemon_hollow', 'san serif' ;
-  font-weight: bold;
+  font-weight: bolder;
   text-align: center;
+  filter: drop-shadow(20px 8px 1px rgb(117, 117, 116));
 }
 .poke-container {
   display: flex;
@@ -49,7 +45,6 @@ div {
     height: 260px;
     margin: 10px ;
     perspective: 600px;
-   
   }
   .card {
       width: 100%;
@@ -80,24 +75,28 @@ div {
 .card__face--front p {
   filter: drop-shadow(20px 8px 1px rgb(77, 77, 74));
 }
-/*.card__face--back p {
-  text-align: center; 
-}*/
+
 .card__face--back {
-  background-image: url('../personal-portfolio/images/pokemon/pokemon_3.jpg');
+  background-image: url('../personal-portfolio/images/pokemon/pokeball_tilt.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  color:#ECB206;
+  color:#148d8d;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bolder;
+  font-size: larger;
   transform: rotateY(180deg); /*when card is rotated, or rotated, card back isn't visible*/
   width: 100%;
   height: 100%;
   border-radius: 10px;
   border: 2px solid black
 }
+ul h3 h5{
+  color:#148d8d; /*#ECB206 */
+}
+
 li {
-list-style-type: circle;/* liked this type better*/
-align-items: center; /*this fixed the alignment*/
+color:#148d8d;
 }
 .poke_image {
   width: 180px;
@@ -109,9 +108,9 @@ button {
   display: inline-flex;           
   justify-content: space-between;  
   margin: 2rem;                   
-  color: #ECB206;
+  color: white;
   font-family: 'pokemon_hollow', 'san serif';
   font-size: 1.5rem;
-  background-color: #122469;
+  background-color: rgb(180, 15, 15);
   border-radius: 10px;
 }

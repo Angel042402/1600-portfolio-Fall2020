@@ -73,7 +73,7 @@ mudButton.addEventListener('click', () => {
 }) 
 */
 
-/*fireButton.addEventListener('click', () => {
+fireButton.addEventListener('click', () => {
     getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=692&offset=36`).then// get pokemon 37 thru 727
         (async (data) => {// I have to make a call for each individual pokemon's url, this is for charmander's 1 :move: {name: "fire-punch", url: "https://pokeapi.co/api/v2/move/7/"}
             {await getAPIData('https://pokeapi.co/api/v2/pokemon/move/7').then((pokeData) => {//get pokemon for type/10 - 'fire'-
@@ -82,7 +82,7 @@ mudButton.addEventListener('click', () => {
                 })
             }
         })
-})*/
+})
 
 //an individual pokemon is passed to the function, populate cards and toggle flip the card
 function populatePokeCard(pokemon) {
