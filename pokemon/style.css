@@ -108,9 +108,10 @@ button {
   display: inline-flex;           
   justify-content: space-between;  
   margin: 2rem;                   
-  color: white;
+  color:#ECB206;
   font-family: 'pokemon_hollow', 'san serif';
   font-size: 1.5rem;
+  font-weight: bolder;
   background-color: rgb(180, 15, 15);
   border-radius: 10px;
 }
