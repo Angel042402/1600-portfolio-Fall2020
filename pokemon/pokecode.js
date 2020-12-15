@@ -30,13 +30,17 @@ let card = document.querySelector('.card')
 const mainPokeDiv = document.querySelector('div')
 mainPokeDiv.className = 'poke-container'
 
+let content = document.querySelector('p')
+
 //add fire chars
 const fireButton = document.createElement('button')
+fireButton.setAttribute('id', 'fire-button')
 fireButton.textContent = 'Pure Fire-type Pokemon'
 mainPokeDiv.appendChild(fireButton)
 
+
 fireButton.addEventListener('click', () => {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=50&offset=0`).then// get pokemon 37 thru 727
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`).then// get pokemon 37 thru 727
         (async (data) => {// I have to make a call to data
             console.log(data.results)
             {
@@ -45,8 +49,9 @@ fireButton.addEventListener('click', () => {
                         (pokeData) => {
                             let pokeType = pokeData.types[0].type.name
                             if (pokeType === 'fire') {//get pokemon 'fire'
-                                populatePokeCard(pokeData)//populate card with pokeData
-                                fireButton.disabled = true 
+                            //document.getElementById('fire-button').style.color = 'red';
+                            populatePokeCard(pokeData)//populate card with pokeData
+                            fireButton.disabled = true 
                             } else {
                                 console.log('Not a Fire Pokemon')
                             }
@@ -125,7 +130,7 @@ poisonButton.textContent = 'Pure Poison-type Pokemon'
 mainPokeDiv.appendChild(poisonButton)
 
 poisonButton.addEventListener('click', () => {
-    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=50&offset=0`).then// get pokemon 37 thru 727
+    getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=100&offset=0`).then// get pokemon 37 thru 727
         (async (data) => {// I have to make a call to data
             console.log(data.results)
             {
