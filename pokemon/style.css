@@ -27,8 +27,7 @@ p {
 }
 .poke-container {
   display: flex;
-  justify-content: space-around;
-  margin: 1rem ;
+  justify-content: center;
 }
 div {
   display: flex;
@@ -105,9 +104,9 @@ color:#148d8d;
   filter: drop-shadow(10px 5px 1.5px rgb(66, 66, 62));/*wanted to give the image a 3d look, the 1st input is offset-x, then offset-y, the blur radius, then its color*/
 }
 button {
-  display: inline-flex;           
-  justify-content: space-between;  
-  margin: 2rem;                   
+  display: flex;           
+  justify-content: space-around;  
+  /*margin: 2rem; */                  
   color:#ECB206;
   font-family: 'pokemon_hollow', 'san serif';
   font-size: 1.5rem;
