@@ -20,6 +20,9 @@ h1 {
   margin: 15px;
 }
 p {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   font-family: 'pokemon_hollow', 'san serif' ;
   font-weight: bolder;
   text-align: center;
@@ -74,12 +77,12 @@ div {
 .card__face--front p {
   filter: drop-shadow(20px 8px 1px rgb(77, 77, 74));
 }
-
 .card__face--back {
   background-image: url('../personal-portfolio/images/pokemon/pokeball_tilt.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: lightblue;
   color:#148d8d;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: bolder;
@@ -91,11 +94,18 @@ div {
   border: 2px solid black
 }
 ul h3 h5{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   color:#148d8d; /*#ECB206 */
 }
 
 li {
-color:#148d8d;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color:#148d8d;
 }
 .poke_image {
   width: 180px;
@@ -106,7 +116,7 @@ color:#148d8d;
 button {
   display: flex;           
   justify-content: space-around;  
-  /*margin: 2rem; */                  
+  margin: 2rem;                  
   color:#ECB206;
   font-family: 'pokemon_hollow', 'san serif';
   font-size: 1.5rem;

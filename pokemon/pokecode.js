@@ -1,4 +1,3 @@
-//import { removeChildren} from '../utils/index.js/'
 //Reusable async function to fetch data from the provided url
 async function getAPIData(url) {
     try {
@@ -31,17 +30,6 @@ let card = document.querySelector('.card')
 const mainPokeDiv = document.querySelector('div')
 mainPokeDiv.className = 'poke-container'
 
-//make buttons to load cards
-/*const loadButton = document.createElement('button')
-loadButton.textContent = 'Load Pokemon'
-mainPokeDiv.appendChild(loadButton)*/
-
-//load pokemon cards
-/*loadButton.addEventListener('click', () => {
-    loadPage()
-    loadButton.disabled = true //populates cards once then disables the load button
-})*/
-
 //add fire chars
 const fireButton = document.createElement('button')
 fireButton.textContent = 'Pure Fire-type Pokemon'
@@ -56,9 +44,8 @@ fireButton.addEventListener('click', () => {
                     await getAPIData(pokemon.url).then(
                         (pokeData) => {
                             let pokeType = pokeData.types[0].type.name
-
-                            if (pokeType === 'fire') {//get pokemon - 'fire'-
-                                populatePokeCard(pokeData)//populate card with pokeData 
+                            if (pokeType === 'fire') {//get pokemon 'fire'
+                                populatePokeCard(pokeData)//populate card with pokeData
                                 fireButton.disabled = true 
                             } else {
                                 console.log('Not a Fire Pokemon')
@@ -132,7 +119,7 @@ electricButton.addEventListener('click', () => {
         })
 })
 
-//add normal chars
+//add poison chars
 const poisonButton = document.createElement('button')
 poisonButton.textContent = 'Pure Poison-type Pokemon'
 mainPokeDiv.appendChild(poisonButton)
@@ -156,8 +143,7 @@ poisonButton.addEventListener('click', () => {
 
                         }
                     )
-                }
-                )
+                })  
             }
         })
 })
@@ -165,7 +151,6 @@ poisonButton.addEventListener('click', () => {
 
 //an individual pokemon is passed to the function, populate cards and toggle flip the card
 function populatePokeCard(pokemon) {
-    //removeChildren(mainPokeDiv)
     let pokeScene = document.createElement('div')
     pokeScene.className = 'scene'
     let pokeCard = document.createElement('div')
@@ -186,6 +171,7 @@ function populateCardFront(pokemon) {
     let cardFront = document.createElement('div')
     cardFront.className = 'card__face card__face--front'
     let frontLabel = document.createElement('p')
+    frontLabel.className = 'char-name'
     let frontImage = document.createElement('img')
     frontImage.className = 'poke_image'
     frontLabel.textContent = pokemon.name
@@ -213,9 +199,7 @@ function populateCardBack(pokemon) {
     let moveAccuracy = document.createElement('h4')
     let pokeWeight = document.createElement('h5')
     pokeWeight.textContent = `Weight: ${pokemon.weight} lbs.`
-    /*let backImage = document.createElement('img')
-    backImage.className = 'card_back_image'
-    backImage.src = '../personal-portfolio/images/pokemon/test_img.png'*/
+    
     cardBack.appendChild(backLabel)
     cardBack.appendChild(abilityList)
     cardBack.appendChild(movesLabel)
@@ -254,8 +238,8 @@ function Pokemon(name, height, weight, abilities, moves) {
     this.moves = moves
 }
 //make personal pokemon array
-/*let angelmon = new Pokemon('Angelmon', 620, 400, ['junkfood-consumption', 'cat-whisperer', 'most-excellent-grandma'])
-console.log(angelmon)*/
+let angelmon = new Pokemon('Angelmon', 620, 400, ['junkfood-consumption', 'cat-whisperer', 'most-excellent-grandma'])
+console.log(angelmon)
 
 //make a new pokemon
 function createNewPokemon(name) {
@@ -264,41 +248,3 @@ function createNewPokemon(name) {
 
 
 
-/*fireButton.addEventListener('click', () => {
-  getAPIData(`https://pokeapi.co/api/v2/pokemon?limit=25`).then
-    (async (data) => {
-        for (const pokemon of data.results) {
-            await getAPIData('https://pokeapi.co/api/v2/type/10').then((pokeData) => {
-                console.log(pokeData)
-                populatePokeCard(pokeData)
-            })
-        }
-    }
-) */
-
-
-/*function findType(pokemon) {
-    for (i = 0; i > pokemon.length - 1; i++) {
-        if (pokemon.move.move.name === 'fire') {
-
-            console.log(pokemon)
-        }
-    }
-}*/
-
-/*const morePokeButton = document.createElement('button')
-morePokeButton.className = 'more-pokemon'
-morePokeButton.textContent = 'load more Pokemon!'
-pokeHeader.appendChild(morePokeButton)*/
-
-/*morePokeButton.addEventListener('click', () => {
-    let pokeName = prompt("What's your new Pokemon's name?");
-    populatePokeCard(createNewPokemon(pokeName))
-})*/
-
-/*const newButton = document.querySelector('#newPokemon')
-
-newButton.addEventListener('click', () => {
-    let pokeName = prompt("What's your new Pokemon's name?");
-    populatePokeCard(createNewPokemon(pokeName))
-  })*/
