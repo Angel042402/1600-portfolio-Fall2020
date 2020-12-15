@@ -200,11 +200,11 @@ function populateCardBack(pokemon) {
         abilityList.appendChild(abilityName)
     })
     let movesLabel = document.createElement('h3')
-    movesLabel.textContent = 'Stats:'
+    movesLabel.textContent = 'Stat: '
     let moveAccuracy = document.createElement('h4')
     let pokeWeight = document.createElement('h5')
-    pokeWeight.textContent = `Weight: ${pokemon.weight} lbs.`
-    
+    pokeWeight.textContent = `Weight: ${pokemon.weight}.`
+
     cardBack.appendChild(backLabel)
     cardBack.appendChild(abilityList)
     cardBack.appendChild(movesLabel)

@@ -29,11 +29,14 @@ figure img {
     border-radius: 10px;
 }
 figcaption{
+    align-content: center;
     color: #fbed66;
     font-family: sf_distant_galaxy, sans-serif;
     text-align: center;
     font-size: 1rem;
     text-shadow: 5px 5px 5px black;
+    width: 100px;
+    padding-left: 21px;
 }
 button {
     background-color: #3b6ab8;

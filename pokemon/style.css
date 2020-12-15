@@ -12,6 +12,7 @@ html {
   background-size: cover;
   background-position: center;
 }
+
 h1 {
   color: #ECB206 ;/*#ECB206 */
   font-family: 'pokemon_hollow', 'san serif' ;
@@ -19,35 +20,42 @@ h1 {
   text-align: center;
   margin: 15px;
 }
+
 p {
-  align-items: center;
+  display: flex;
   justify-content: center;
   flex-direction: column;
   font-family: 'pokemon_hollow', 'san serif' ;
   font-weight: bolder;
   text-align: center;
+  margin-left: 10px;
   filter: drop-shadow(20px 8px 1px rgb(117, 117, 116));
 }
+
 .poke-container {
   display: flex;
   justify-content: center;
 }
+
 div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
+
 .pokemonGrid {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
+
 .scene {
     width: 200px;
     height: 260px;
     margin: 10px ;
     perspective: 600px;
   }
+
   .card {
       width: 100%;
       height: 100%;
@@ -56,9 +64,11 @@ div {
       cursor: pointer; 
       position: relative;
   }
-  .card.is-flipped {
+
+  .card.is-flipped { 
     transform: rotateY(180deg);
   }
+
   .card__face {
   position: absolute;
   width: 100%;
@@ -67,6 +77,7 @@ div {
   backface-visibility: hidden;
   border-radius: 10px;
 }
+
 .card__face--front {
   background-image: url('../personal-portfolio/images/pokemon/pokemon_2.png');
   background-repeat: no-repeat;
@@ -74,26 +85,36 @@ div {
   background-position: center;
   border: 2px solid black
 }
+
 .card__face--front p {
   filter: drop-shadow(20px 8px 1px rgb(77, 77, 74));
 }
+
 .card__face--back {
   background-image: url('../personal-portfolio/images/pokemon/pokeball_tilt.png');
-  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-blend-mode: overlay;
   background-color: lightblue;
   color:#148d8d;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-weight: bolder;
-  font-size: larger;
   transform: rotateY(180deg); /*when card is rotated, or rotated, card back isn't visible*/
   width: 100%;
   height: 100%;
   border-radius: 10px;
   border: 2px solid black
 }
+
 ul h3 h5{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 2rem;
+  color:#148d8d; /*#ECB206 */
+}
+
+ul {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -101,11 +122,19 @@ ul h3 h5{
   color:#148d8d; /*#ECB206 */
 }
 
-li {
+li { 
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   color:#148d8d;
+}
+
+h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .poke_image {
   width: 180px;
@@ -113,6 +142,7 @@ li {
   margin: 15px 0 0 0;
   filter: drop-shadow(10px 5px 1.5px rgb(66, 66, 62));/*wanted to give the image a 3d look, the 1st input is offset-x, then offset-y, the blur radius, then its color*/
 }
+
 button {
   display: flex;           
   justify-content: space-around;  
@@ -124,3 +154,10 @@ button {
   background-color: rgb(180, 15, 15);
   border-radius: 10px;
 }
+
+/*display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 10px;
+  */
